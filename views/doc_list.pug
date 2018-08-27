@@ -1,0 +1,33 @@
+extends layout
+
+block content
+  h1= title
+  
+  div(class='docs')
+    table
+      thead
+        tr
+          th Id
+          th Hash
+          th Name
+          th Path
+          th Title
+          th Description
+          th Size
+          th Created at
+      tbody
+        each doc in doc_list
+          tr
+            td #{doc._id}
+            td #{doc.hash}
+            td 
+              a(href='/view/' + doc.name) #{doc.name}
+            td #{doc.path}
+            td #{doc.title}
+            td #{doc.description}
+            td #{doc.size}
+            td #{doc.created_at}
+             
+
+
+
